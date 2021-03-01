@@ -1,1 +1,1 @@
-web: gunicorn korbex.wsgi --log-file -
+web: gunicorn serwis_rowerowy.wsgi --log-file -
