@@ -1,0 +1,149 @@
+{% extends './index.html' %}
+{% load static %}
+
+{%block service%}
+    active
+{%endblock%}
+
+{% block content %}
+
+<div class="content-service">
+
+    <div style="display: flex">
+        <h3>Serwis rowerowy. Witamy w naszym serwisie </h3>
+
+<!-----------------The pop-up menu for: new type repair and new repair----------------------->
+        {% if request.user.is_authenticated %}
+        <div class="dropdown">
+            <span class="dropbtn"> + NEW </span>
+                <div class="dropdown-content">
+                    <a id="newtypeBtn">Rodzaj Naprawy</a>
+                    <a id="newrepairBtn" >Nowa Naprawa</a>
+                </div>
+        </div>
+        {% endif %}
+    </div>
+
+<!-----------Modal window / new type repair--------------->
+    <div id="newtypeModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+          <form action="{% url 'new_type' %}" method="post">
+              {% csrf_token %}
+            <div>
+              <p>{{type_repairs_form.type_repair}}</p>
+                {{error}}
+              <input type="submit"  value="ZAPISZ">
+            </div>
+          </form>
+      </div>
+    </div>
+
+<!----------Modal window / new repair----------->
+    <div id="newrepairModal" class="modal">
+            <div class="modal-content">
+                    <span class="close">&times;</span>
+                <form method="post" action="{% url 'new_repair' %}">
+                    {% csrf_token %}
+
+                  <table class="new_repair">
+                      <tr>
+                          <th>rodzaj naprawy </th>
+                          <td>{{repairsform.type_repair}}</td>
+                      </tr>
+                      <tr>
+                          <th> nazwa naprawy </th>
+                          <td> {{repairsform.name_repair}} </td>
+                      </tr>
+                      <tr>
+                          <th> cena </th>
+                          <td> {{repairsform.price}} </td>
+                      </tr>
+                  </table>
+                     <input type="submit" value="ZAHOWAJ">
+                    {{error}}
+                </form>
+            </div>
+    </div>
+
+
+<!---------------CONTENT SERVICE PAGE------------------------->
+
+    <table>
+        <!--        Repair type in the table        -->
+{% for type_r in type_repairs %}
+    <tr>
+        <th class="col2">{{type_r}}</th>  <!--the field for type repair(rodzaj naprawy) -->
+        <th></th>
+
+        <!--three dots to start updating the repair type -->
+    {% if request.user.is_authenticated %}
+        <th class="three-dots" onclick="ipsum{{type_r.id}}.style.display='block'">&#10247;</th>
+
+        <!--The hidden field that includes a window to update the type repair-->
+        <th id="ipsum{{type_r.id}}" class="edit">
+            <form method="post" action="{% url 'edit_type' %}?id={{type_r.id}}">
+                {% csrf_token %}
+                <label>Redagować:</label> <input type="text" name="type" value="{{type_r}}"/><br>
+                <input type="submit" value="Zapisz Zmiany">
+                <button type="reset" onclick="ipsum{{type_r.id}}.style.display='none'">Zrezygnować</button><br>
+            </form>
+            <p style="margin: 20px 150px 0 0"><a href="{% url 'delete_type' %}?id={{type_r.id}}">Usuń całkowicie ten wpis</a></p>
+        </th>
+    {% endif %}
+
+    </tr>
+        <!--          Repair in the table         -->
+    {% for repair in repairs %}
+        {% if repair.type_repair == type_r %}
+            <tr>
+                <td>{{repair.name_repair}}</td><!--the field for name repair(nazwa naprawy) -->
+                <td>{{repair.price}}</td>       <!--the field for repair price (cena naprawy) -->
+
+            {% if request.user.is_authenticated %}
+                <!--three dots to start updating the repair -->
+                <td class="three-dots" onclick="lorem{{repair.id}}.style.display='block'">&#10247;</td>
+
+                <!--The hidden field that includes a window to update the repair-->
+                <td id='lorem{{repair.id}}' class="edit">
+                        <form method="post" action="{% url 'edit_repair' %}?id={{repair.id}}">
+                            {% csrf_token %}
+                            <table>
+                            <tr>
+                                <td>Typ naprawy</td>
+                                <td>
+                                <select  name="type">
+                                    <option selected>{{repair.type_repair}}</option>
+                                    {% for t in type_repairs %}
+                                        {% if t != repair.type_repair %}
+                                            <option>{{t.type_repair}}</option>
+                                        {% endif %}
+                                    {% endfor %}
+                                </select>
+                                </td>
+                            </tr>
+                            <tr>
+                            <td>Nazwa naprawy</td><td><input type="text" name="repair" value="{{repair.name_repair}}"/></td>
+                            </tr>
+                            <tr>
+                            <td>Cena</td><td><input type="text" name="price" value="{{repair.price}}"/></td>
+                            </tr>
+                            </table>
+                            <button type="submit" value="Zapisz zmiany">Zapisz zmiany</button>
+                            <button type="reset" onclick="lorem{{repair.id}}.style.display='none'">Zrezygnować</button>
+                        </form>
+                        <p style="margin: 20px 0 0 50px"><a href="{% url 'delete_repair' %}?id={{repair.id}}">Usuń całkowicie ten wpis</a></p>
+                </td>
+            {% endif %}
+            </tr>
+        {% endif %}
+    {% endfor %}
+{% endfor %}
+    </table>
+
+</div>
+<script type="text/javascript" src="{% static 'korbex/js/script.js' %}"></script>
+
+
+
+{% endblock %}

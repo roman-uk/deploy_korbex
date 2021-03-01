@@ -1,0 +1,100 @@
+{% extends './index.html' %}
+{% load static %}
+
+{%block contact%}
+    active
+{%endblock%}
+
+{% block content %}
+<div class="content-contact">
+    <h1 style="color: white">Serwis rowerowy. Witamy w naszym serwisie
+		{% if request.user.is_authenticated %}
+		<a style="color: #A9F5A9; margin-left: 10px" href="{% url 'contact-data_create' %}">Nowy kontakt</a>
+		{% endif %}
+	</h1>
+
+<!--===================== a contact-block with three squares (with address, phone and facebook) ===============-->
+	<div class="allcontact">
+		{% for cont in contact_data %}
+  	   <div class="onecontact">
+  	   			<h2>ADRES:
+					<!-- three dots dropdown menu-->
+					{% if request.user.is_authenticated %}
+				   <div class="dropdown">
+						<span class="three-dots">&#10247;</span>
+						<div class="dropdown-content">
+							<a href="{% url 'contact-data_update' cont.id %}">Redagować</a>
+							<a href="{% url 'contact-delete' 'data' cont.id %}"
+							   onclick="return confirm('Usunąć {{cont.address}}, {{cont.telephone}}?');">Usunąć</a>
+						</div>
+				   </div>
+					{% endif %}
+					<!------end three dots--------->
+				</h2>
+		   <br><p style="padding: 5px"></p>
+  	   		<br>{{cont.address}}
+	   </div>
+ 	   <div class="onecontact">
+		   <h2>TELEFON:
+			   		<!-- three dots dropdown menu-->
+			   {% if request.user.is_authenticated %}
+				   <div class="dropdown">
+						<span class="three-dots">&#10247;</span>
+						<div class="dropdown-content">
+							<a href="{% url 'contact-data_update' cont.id %}">Redagować</a>
+							<a href="{% url 'contact-delete' 'data' cont.id %}"
+							   onclick="return confirm('Usunąć {{cont.address}}, {{cont.telephone}}?');">Usunąć</a>
+						</div>
+				   </div>
+			   {% endif %}
+			   		<!------end three dots--------->
+				</h2>
+ 	   		<br><p style="padding: 5px"></p>
+ 	   		<br>{{cont.telephone}}
+ 	   	</div>
+ 	   <div class="facecontact">
+		   <a href="{{cont.facebook}}"><img src="{% static 'korbex/images/facebook.jpeg' %}"></a>
+ 	   </div>
+		{% endfor %}
+  	</div>
+	<!--=============================== end contact-block =============================-->
+
+<!--============================ Google maps in page =============================-->
+	<h3 style="color: white; padding: 0 3%">Znajdziesz nas tutaj</h3>
+  	   <div><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2323.713862522614!2d18.6227143158776
+  	   5!3d54.379704980208565!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46fd74a28c91d1df%3A0xb7843412ea01d
+  	   40!2sDzielna%2033%2C%2080-404%20Gda%C5%84sk%2C%20Poland!5e0!3m2!1sen!2sua!4v1607779704127!5m2!1sen!2sua"
+					width="600" height="450"  allowfullscreen="" aria-hidden="false" tabindex="0"></iframe></div>
+	<!-- ===================================== end maps in page ==========================-->
+
+<!--====================== a block (working hours) with an indication of the work schedule ============= -->
+  	   <div class="worktime">  	   		
+ 	   		<ul>
+
+ 	   			<li><span>Czynne:</span></li>
+				{% if request.user.is_authenticated %}
+				<li><a style="color: #A9F5A9" href="{% url 'contact-day_create' %}">Dodaj dzień</a></li>
+				{% endif %}
+				{%for work in working_hours%}
+ 	   			<li style="margin-top: 12px;" class="day">{{work.working_day|slice:"2:"}}
+					<!-- three dots dropdown menu-->
+					{% if request.user.is_authenticated %}
+					<div class="dropdown">
+						<span class="three-dots">&#10247;</span>
+						<div class="dropdown-content">
+							<a href="{% url 'contact-day_update' work.id %}">Redagować</a>
+							<a href="{% url 'contact-delete' 'work' work.id %}"
+							   onclick="return confirm('Usunąć {{work.working_day|slice:'2:'}} ?');">Usunąć</a>
+						</div>
+					</div>
+					{% endif %}
+					<!-------end three dots-------->
+				</li>
+ 	   			<li>{{work.working_hours}}</li>
+				{% endfor %}
+ 	   		</ul>	
+ 	   </div>
+	<!--  ==================	  end working hours ===============================-->
+
+</div>
+{% endblock %}

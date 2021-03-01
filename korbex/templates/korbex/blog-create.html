@@ -1,0 +1,22 @@
+{% extends "./index.html" %}
+{% load static %}
+
+{%block blog%}
+    active
+{%endblock%}
+
+{% block content %}
+<div style="width: 100%" class="content-home">
+    <a href="{% url 'blog_p' %}" class="close">&times;</a>
+<form  method="post" enctype='multipart/form-data'>
+    {% csrf_token %}
+    <table class="table-form">
+    {{ form.as_table}}
+    </table>
+
+    <input style="margin:30px" type="submit" value="Zachować" />
+</form>
+
+</div>
+
+{% endblock %}

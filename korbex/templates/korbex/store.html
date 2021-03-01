@@ -1,0 +1,68 @@
+{% extends './index.html' %}
+{% load static %}
+
+{%block store%}
+    active
+{%endblock%}
+
+{% block content %}
+<div class="content-store">
+
+    <h1>Serwis rowerowy. Witamy w naszym serwisie
+        {% if request.user.is_authenticated %}
+            <a href="{% url 'store_create' %}">Nowy product</a>
+        {% endif %}
+    </h1>
+
+<!-- ========================= Form Block - PRODUCT FILTER ======================= -->
+    <div class="sort-bar">
+        <form action="{% url 'store_p' %}?sort=sort&pr_min=pr_min&pr_max=pr_max" method="GET">
+            {% csrf_token %}
+           Filter:
+            <select name="sort">
+                <option value="name_product">A - Z</option>
+                <option value="-name_product">Z -A</option>
+                <option value="price">Cena wgóre</option>
+                <option value="-price">Cena wdół</option>
+            </select>
+            | Cena  od <input type="number" value="{{price_min}}" placeholder="{{price_min}}" name="pr_min" size="4">
+                    do <input type="number" value="{{price_max}}" placeholder="{{price_max}}" name="pr_max" size="4">
+            |   <input type="text" value="{{search}}" placeholder="czego szukasz?" name="search" size="8">
+
+            <input class="zastosuj" type="submit" value="Zastosuj">
+            <a style="padding: 5px 8px" href="{% url 'store_p' %}">RESET</a>
+        </form>
+    </div>
+    <!-- ----------------------- End - PRODUCT FILTER ---------------------------- -->
+
+<!-- =========================== Block CONTENT ========================================== -->
+{% for prod in products %}
+    <div class="item-product">
+        <div><img src="{{ prod.imageUrl }}"></div>
+        <div class="brief-contents">
+            <h4><a style="color: #071910" href="{% url 'one_product' prod.id %}">{{prod.name_product}}</a>
+
+        <!-- ============ three dots dropdown menu ========== -->
+                    {% if request.user.is_authenticated %}
+                       <div class="dropdown">
+                            <span class="three-dots">&#10247;</span>
+                            <div class="dropdown-content">
+                                <a href="{% url 'store_update' prod.id %}">Redagować</a>
+                                <a href="{% url 'store_delete' prod.id %}"
+                                   onclick="return confirm('Usunąć {{prod.name_product}}?');">Usunąć</a>
+                            </div>
+                       </div>
+                    {% endif %}
+            <!-- ------------end three dots--------------- -->
+
+            </h4>
+            <h4>{{ prod.price }} zl</h4>
+            <p>{{prod.incomplete_description|linebreaksbr}}</p>
+        </div>
+
+    </div>
+{% endfor %}
+    <!-- ------------------------------- end CONTENT ------------------------------ -->
+
+</div>
+{% endblock %}

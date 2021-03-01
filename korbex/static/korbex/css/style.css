@@ -1,0 +1,627 @@
+
+/* =========================
+        INDEX.HTML
+   ========================*/
+body{
+    background-attachment: fixed;
+    background-height: 100%;
+    background-repeat: no-repeat;
+    font-family: Raleway, sans-serif;
+    background-image: url(https://i.pinimg.com/originals/5f/47/84/5f47840c5ee678b8c16ce80b39d7a0ad.jpg);
+
+}
+
+.login {
+    position: absolute;
+    text-decoration: none;
+    background: #81BEF7;
+    color: #F7FE2E;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 15px;
+    font-weight: bold;
+    bottom: 0px;
+    right: 0;
+}
+
+h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    display: flex;
+}
+
+.container {
+    width: 800px;
+    min-height: 800px;
+    margin: 0 auto;
+    margin-top: 50px;
+    border-radius: 10px;
+}
+
+.header {
+    display: flex;
+    height: 150px;
+    border-radius: 10px;
+}
+
+.title-block {
+    background-size: cover;
+    display: flex;
+    width: 70%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+}
+
+.userpic {
+    position: relative;
+    display: flex;
+    height: 100%;
+    width: 30%;
+}
+.userpic span{
+    position: absolute;
+    top: 0px;
+    left: 10%;
+    color: #DF0101;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.nav ul {
+    display: flex;
+    background: rgb(230, 230, 230);
+    margin: 5px 0;
+    border-radius: 10px;
+}
+
+.nav li {
+    width: 20%;
+    border-radius: 10px;
+}
+
+.active {
+    background-color: grey;
+    border-radius: 10px;
+
+}
+
+.nav li a {
+    display: flex;
+    padding: 20px;
+    justify-content: center;
+    text-decoration: none;
+    color: #404040;
+    font-weight: bold;
+    border-radius: 10px;
+    transition: background .5s ease;
+}
+
+p {
+    line-height: 20px;
+}
+
+.nav li a:hover {
+    background: rgb(196, 196, 196);
+    border-radius: 10px;
+}
+
+.content-wrapper {
+    display: flex;
+}
+
+.footer {
+    background: #FFFFFF;
+    padding: 0 50px;
+    border-radius: 5px;
+}
+
+
+/*===================
+     HOME
+=====================*/
+
+h1 {
+    font-size: 22px;
+    font-family: New Century Schoolbook, TeX Gyre Schola, serif;
+    color: #0B173B;
+    margin: 15px 10px 0px 5px;
+    text-align: center;
+
+}
+h1 a {
+    margin: 0 10px;
+}
+
+.content-home {
+    background: url("../images/rm21.jpg");
+    background-size: cover;
+    width: 80%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+}
+
+.content-home h3 {
+    margin-top: 30px;
+}
+
+.content-home img {
+    margin-right: 10px;
+    float: left;
+    max-width: 300px;
+    border-radius: 7px;
+}
+
+.sidebar {
+    background: #81BEF7;
+    width: 20%;
+    padding: 10px;
+    border-radius: 7px;
+    margin-left: 2px;
+}
+
+.sidebar li {
+    padding: 10px 0;
+    transition: transform .5s ease;
+    cursor: pointer;
+}
+
+.sidebar li:hover {
+    transform: translateX(10px);
+}
+
+/*===================
+     STORE
+===================== */
+
+.content-store {
+    background: #81BEF7;
+    width: 100%;
+    padding: 2px;
+    border-radius: 10px;
+    opacity: 0.9;
+}
+.sort-bar {
+    border-bottom: 1px dotted #dfe9f2;
+    font: 0.9em Helvetica, Arial, Tahoma;
+    margin: 20px 20px;
+    padding: 10px 0;
+}
+
+form a {
+    border: 2px solid grey;
+    border-radius:5px;
+    background: #E6E6E6;
+    padding: 20px 0;
+}
+
+.sort-bar a {
+    padding: 0 5px;
+    text-decoration: none;
+    color: black;
+}
+
+.price {
+    width: 70px;
+}
+
+.search {
+    width: 140px;
+    margin-left: 10px;
+}
+
+.zastosuj {
+    width: 100px;
+    height: 34px;
+    margin-left: 10px;
+    border-radius:10%;
+    border: 2px solid grey;
+}
+.sort-bar a:hover, .sort-bar a:focus, .sort-bar a:active {
+    color: #61380B;
+}
+
+
+.item-product {
+    display: flex;
+    flex-direction: row;
+    margin: 5px;
+    background: #A9D0F5;
+    border-radius: 7px;
+    height: 140px;
+    font-family: Comic Sans MS, Comic Sans, cursive;
+}
+
+.item-product h4 {
+    margin: 5px 20px;
+    font-size: 1.1em;
+    color: #61380B;
+    font-family: Veranda ;
+}
+
+.item-product img {
+    max-height: 130px;
+    width: 200px;
+    padding: 5px;
+    border-radius: 7%;
+}
+
+.brief-contents {
+    padding: 5px 10px;
+}
+
+.one-product {
+    display: flex;
+    flex-direction: column;
+    background-color: #EFF5FB;
+    padding: 23px;
+    border-radius: 10px;
+
+}
+
+.one-product img {
+    max-height: 300px;
+    margin: 20px;
+    border-radius: 10px;
+    align-content: center;
+
+}
+
+.one-product h2 {
+    font-size: 1.2em;
+    padding: 20px 30px;
+    font-family: Impact;
+    text-align: center;
+
+}
+
+.product-price {
+    text-align: center;
+    padding: 0 20px;
+    font-size: 1.4em;
+    color: #0B173B;
+    font-family: Luminari;
+}
+
+.product-description {
+    margin: 20px 50px;
+    text-indent: 20px;
+}
+
+/*=====================
+   SERVICE
+ ======================*/
+
+.content-service {
+    background: url("../images/aluminum_texture.jpg");
+    opacity: 0.9;
+    background: #81BEF7;
+    width: 100%;
+    padding: 20px;
+    border-radius: 10px;
+
+}
+        /*        Adding New records to the Page       */
+
+    /* The POP-UP MENU (drop down menu for chose new position or new type repair)*/
+.dropbtn {
+    color: blue;
+    padding: 16px;
+    font-size: 16px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    visibility: hidden;
+    position: absolute;
+    background-color: #CECEF6;
+    min-width: 130px;
+    left: 20px;
+    top: 18px;
+    border-radius: 5%;
+    margin-left: -18px;
+    font-size: 14px;
+    z-index:3;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 8px;
+    cursor: pointer;
+    display: block;
+    border-radius: 5%;
+    text-align: left;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.dropdown-content a:hover {
+    background-color: #A9A9F5;
+    opacity: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    visibility: visible;
+}
+
+            /*     Modal window / new type repair and new repair      */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+}
+
+    /* Content Modal window / new type repair and new repair  */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 4px solid #1C5858;
+  width: 80%;
+  border-radius: 5px;
+}
+
+            /* Field for adding a new repair type. */
+.types_repair {
+    width: 160px;
+    margin-bottom: 50px;
+    border: 2px solid grey;
+    font-size: 20px;
+}
+
+/* The Close Button */
+.close {
+  text-decoration: none;
+  color: #56044E;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  text-align: right;
+  margin: 0 20px;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+            /* Field for adding a new repair. */
+.new_repair {
+    width: 300px;
+    height: 200px;
+    border: 0;
+
+    background: #fff;
+    left: 150px;
+    top: 50px;
+}
+
+.new_repair td {
+    border: 0;
+}
+
+.new_repair th {
+    width: 130px;
+    border: 0;
+    text-align: left;
+}
+
+
+/*  editing records on a page  */
+
+.edit {
+    display: none;
+    background-color: #BEC1C4;
+    padding: 10px;
+    position: absolute;
+    left: 100px;
+    border: 5px solid #79B1EC;
+    border-radius: 10px;
+    margin-top: -200px;
+    opacity: 1;
+    z-index: 8;
+}
+
+.edit input {
+    font-size: 16px;
+    border: 1px solid grey
+    padding: 5px;
+}
+
+.edit button {
+    font-size: 16px;
+    margin-top: 30px;
+    margin-left: 50px;
+}
+
+.edit table, td {
+    margin: 20px;
+    border: 0;
+
+}
+.edit td {
+    margin: 10px;
+    border: 0;
+
+}
+
+            /*  CONTENT */
+
+
+table {
+    margin: 20px 0;
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    border: none;
+
+}
+
+th, td {
+    border-top: 1px black solid;
+    border-bottom: 1px black solid;
+    padding: 8px;    
+    font-size: 1.1em;
+    border: none;
+
+}
+
+.col2 {
+    color: brown;
+    font-family: Geneva, Helvetica;
+    font-weight: bold;
+    font-size: 1.3em;
+}
+
+.three-dots{
+    margin-left: 10px;
+    font-size: 20px;
+    color: blue;
+    text-align: left;
+    cursor: pointer;
+}
+
+/*============= 
+||   BLOG    ||
+===============*/
+
+.content-blog {
+    display: flex;
+    flex-direction: column;
+    opacity: 0.9;
+    background: #81BEF7;
+    padding: 3px;
+    border-radius: 10px;
+}
+
+.post {         
+    background: #E6E6E6;
+    border-radius: 2%;
+    margin: 10px;
+    padding: 3px;    
+} 
+
+.post h2 {
+    font-size: 1.3em;
+    margin-bottom: 7px;
+    text-align: center;
+}
+.meta {
+    color: blue;
+    font-size: 0.7em;
+}
+
+.post img {
+    float: left;
+    margin: 0 10px 5px 0;
+    max-width: 350px;
+}
+
+.table-form {
+    border-collapse: collapse;
+    border: 0px;
+    text-align: left;
+    margin: 0 20px;
+}
+
+.table-form th, td {
+    border: 0px;
+}
+
+/*=================
+    CONTACT
+===================*/
+
+.content-contact {
+    background: url(../images/stars_sky.jpg);
+    width: 100%;
+    border-radius: 15px;
+    opacity: 0.85;
+}
+
+.allcontact {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 2%;
+}
+
+.onecontact {    
+    display: flex;
+    flex-direction: column;
+    background-color: #CEECF5;
+    margin: 3%;
+    padding: 5%;
+    padding-right: 1%;
+    height: 100px;
+    width: 20%;
+    border-radius: 10%;
+}
+
+.facecontact {    
+    display: flex;
+    background-color: #CEECF5;
+    margin: 3%;
+    padding: 2%;
+    width: 22%;
+    border-radius: 10%;
+}
+
+.facecontact img {
+    position: absolute;
+    border-radius: 10%;
+    height: 147px;
+    width: 167px
+}
+
+.content-contact iframe {
+    margin: 10px;
+    float: left;
+    border-radius: 5px;
+    border: 5px solid grey;
+}
+
+.worktime {   
+    display: flex;    
+    color: white;    
+}
+
+.worktime li {    
+    margin: 7px 10px;
+}
+
+.worktime span {
+    font-weight: bold;
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+
+.day {
+    font-size: 18px;
+}
+
+.day + li {
+    padding-left: 10px;
+    padding-bottom: 5px;
+}
