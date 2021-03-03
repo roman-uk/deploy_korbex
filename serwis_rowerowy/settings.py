@@ -136,6 +136,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIAFILES_DIRS = (MEDIA_ROOT)
 
 # this is an alternative to the method:  def get_success_url
 # LOGIN_REDIRECT_URL = '/'

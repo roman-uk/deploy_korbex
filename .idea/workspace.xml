@@ -20,7 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7e6f2d0f-b0a2-4b18-9a8a-40dd60f81615" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/serwis_rowerowy/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/serwis_rowerowy/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,9 +70,9 @@
       <screen x="0" y="0" width="1600" height="867" />
     </state>
     <state x="543" y="240" width="509" height="387" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1600.867/1600.0.1680.1050@0.0.1600.867" timestamp="1614619423846" />
-    <state x="583" y="193" width="430" height="481" key="FileChooserDialogImpl" timestamp="1614700561232">
+    <state x="583" y="193" width="430" height="481" key="FileChooserDialogImpl" timestamp="1614760829520">
       <screen x="0" y="0" width="1600" height="867" />
     </state>
-    <state x="583" y="193" width="430" height="481" key="FileChooserDialogImpl/0.0.1600.867/1600.0.1680.1050@0.0.1600.867" timestamp="1614700561232" />
+    <state x="583" y="193" width="430" height="481" key="FileChooserDialogImpl/0.0.1600.867/1600.0.1680.1050@0.0.1600.867" timestamp="1614760829520" />
   </component>
 </project>
