@@ -1,12 +1,16 @@
 from django.db import models
 
+# This is necessary for displaying images via Cloudinary
+from cloudinary.models import CloudinaryField
+
 
 # >>>>>>>>> Models from Home Page <<<<<<<<<<<
 #    Model for a record on the Home page
 class HomeContent(models.Model):
     title = models.CharField(max_length=50, unique=True)
     content = models.TextField(help_text="input your text")
-    image = models.ImageField(null=True, blank=True, upload_to='home_image')
+    # image = models.ImageField(null=True, blank=True, upload_to='home_image')  # normal images field
+    image = CloudinaryField(null=True, blank=True)  # displaying images via Cloudinary
     data_add = models.DateTimeField(auto_now=True, null=True, blank=True)
 
     # Overriding the save method so that when an image is deleted or updated,
@@ -34,7 +38,8 @@ class HomeContent(models.Model):
 # >>>>>>> Models from Store page <<<<<<<<
 #     Model for a product on the Store page
 class StoreProducts(models.Model):
-    image = models.ImageField(null=True, blank=True, verbose_name='Obrazek do towaru', upload_to='store_image')
+    # image = models.ImageField(null=True, blank=True, verbose_name='Obrazek do towaru', upload_to='store_image')  # normal images field
+    image = CloudinaryField(null=True, blank=True, verbose_name='Obrazek do towaru')  # displaying images via Cloudinary
     name_product = models.CharField(max_length=40, unique=True, verbose_name='Nazwa towaru')
     incomplete_description = models.TextField(max_length=180, verbose_name='Krótki opis towaru')
     continue_description = models.TextField(null=True, blank=True, verbose_name='Pełny opis towaru')
@@ -85,7 +90,8 @@ class Service(models.Model):
 class Blog(models.Model):
     title = models.CharField(max_length=50, unique=True, verbose_name='Tytulł')
     content = models.TextField(verbose_name='Treść')
-    image = models.ImageField(null=True, blank=True, verbose_name='Obrazek do artyklu', upload_to='blog_image')
+    # image = models.ImageField(null=True, blank=True, verbose_name='Obrazek do artyklu', upload_to='blog_image') # normal images field
+    image = CloudinaryField(null=True, blank=True, verbose_name='Obrazek do artyklu')  # displaying images via Cloudinary
     data_add = models.DateField(auto_now=True)
     author = models.CharField(max_length=20, verbose_name='Awtor artyklu')
 

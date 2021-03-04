@@ -21,25 +21,14 @@
   <component name="ChangeListManager">
     <list default="true" id="7e6f2d0f-b0a2-4b18-9a8a-40dd60f81615" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/Maska-OCHRONNA-Antywirusowa-Antysmogowa.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/ROWER-GORSKI-XC-27-5-SHIMANO.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/WIESZAK-SCIENNY-NA-ROWER.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/Xiaomi-Elektryczna-pompka-rowerowa.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/Zestaw-LED-tyl-przod-XPG500-na-USB-lampka-rowerowa.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/amortyzatory.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/amortyzatory_FerV1BB.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/biegi.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/biegi_Nfuxx1b.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/bikeboys-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/girl.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/kurtk.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/kurtka.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/kurtka.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/latarka.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/pedaly.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/sakwa.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/serv.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/typerower.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/korbex/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/korbex/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/korbex/templates/korbex/blog.html" beforeDir="false" afterPath="$PROJECT_DIR$/korbex/templates/korbex/blog.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/korbex/templates/korbex/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/korbex/templates/korbex/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/korbex/templates/korbex/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/korbex/templates/korbex/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/korbex/templates/korbex/one_product.html" beforeDir="false" afterPath="$PROJECT_DIR$/korbex/templates/korbex/one_product.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/korbex/templates/korbex/store-update.html" beforeDir="false" afterPath="$PROJECT_DIR$/korbex/templates/korbex/store-update.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/korbex/templates/korbex/store.html" beforeDir="false" afterPath="$PROJECT_DIR$/korbex/templates/korbex/store.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/equirements.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/serwis_rowerowy/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/serwis_rowerowy/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

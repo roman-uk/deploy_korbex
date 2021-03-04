@@ -14,6 +14,12 @@ from pathlib import Path
 import os
 import dj_database_url
 
+# This is necessary for displaying images via Cloudinary
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
+
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -125,7 +131,17 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
-#
+
+
+# This is necessary for displaying images via Cloudinary
+cloudinary.config(
+  cloud_name = "dtabjdkaf",
+  api_key = "494236315171716",
+  api_secret = "V2nqsRLlbAsht3iEz0-Fo_AU5q4"
+)
+
+
+
 # Activate this If the static folder is not in the application folder
 # STATICFILES_DIRS = [
 #     os.path.join(BASE_DIR, 'static')
