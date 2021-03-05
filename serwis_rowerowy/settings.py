@@ -14,15 +14,13 @@ from pathlib import Path
 import os
 import dj_database_url
 
-# This is necessary for displaying images via Cloudinary
+# This is necessary for displaying images with Cloudinary
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
 
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
@@ -35,9 +33,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'cg#p$g+j9tax!#a3cup@1$8obt2_+&
 # DEBUG = True
 DEBUG = bool(os.environ.get('DJANGO_DEBUG', True))
 
-
 ALLOWED_HOSTS = ['*']
-
 
 # Application definition
 
@@ -48,8 +44,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'cloudinary_storage',   # This is necessary for displaying images with Cloudinary
+    'cloudinary',  # This is necessary for displaying images with Cloudinary
     'korbex',
-    'cloudinary',    # This is necessary for displaying images via Cloudinary
 ]
 
 MIDDLEWARE = [
@@ -83,7 +80,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'serwis_rowerowy.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
@@ -93,7 +89,6 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -113,11 +108,10 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
-LANGUAGE_CODE = 'pl-pl' #'en-us'
+LANGUAGE_CODE = 'pl-pl'  # 'en-us'
 
 TIME_ZONE = 'UTC'
 
@@ -127,33 +121,26 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
 
+# This is necessary for displaying images with Cloudinary
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'dtabjdkaf',
+    'API_KEY': '494236315171716',
+    'API_SECRET': 'V2nqsRLlbAsht3iEz0-Fo_AU5q4'
+}
 
-# This is necessary for displaying images via Cloudinary
-cloudinary.config(
-  cloud_name = "dtabjdkaf",
-  api_key = "494236315171716",
-  api_secret = "V2nqsRLlbAsht3iEz0-Fo_AU5q4"
-)
-
-
-
-# Activate this If the static folder is not in the application folder
-# STATICFILES_DIRS = [
-#     os.path.join(BASE_DIR, 'static')
-# ]
 
 # STATIC_ROOT is the folder where static files will be stored after using manage.py collectstatic
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'mediafiles')
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'  # This is necessary for displaying images with Cloudinary
 
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'mediafiles')     #It be uncommented if we don't use Cloudinary
 
 # this is an alternative to the method:  def get_success_url
 # LOGIN_REDIRECT_URL = '/'

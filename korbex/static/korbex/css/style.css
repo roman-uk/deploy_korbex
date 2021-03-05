@@ -535,6 +535,7 @@ th, td {
     background: #81BEF7;
     padding: 3px;
     border-radius: 10px;
+    width: 100%;
 }
 
 .post {         
