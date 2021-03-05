@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'korbex',
+    'cloudinary',    # This is necessary for displaying images via Cloudinary
 ]
 
 MIDDLEWARE = [
