@@ -7,9 +7,6 @@ from django.views.generic import CreateView, UpdateView
 from django.contrib.auth.views import LoginView, LogoutView, PasswordChangeView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.forms import PasswordChangeForm
-from django.contrib import messages
-
 
 
 #   Login/Logout
@@ -31,7 +28,6 @@ class UpdatePassword(LoginRequiredMixin, PasswordChangeView):
     form_class = UpdatePasswordForm
     success_url = reverse_lazy('home_p')
     template_name = 'korbex/change-password.html'
-
 
 
 # >>>>>>>>>>>>>>>>>>>>>> Start/ Home page <<<<<<<<<<<<<<<<<<<<<<
