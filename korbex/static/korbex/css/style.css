@@ -142,6 +142,7 @@ h1 a {
     background: url("../images/rm21.jpg");
     background-size: cover;
     width: 80%;
+    box-sizing: border-box;
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -162,6 +163,7 @@ h1 a {
 .sidebar {
     background: #81BEF7;
     width: 20%;
+    box-sizing: border-box;
     padding: 10px;
     border-radius: 7px;
     margin-left: 2px;
@@ -184,6 +186,7 @@ h1 a {
 .content-store {
     background: #81BEF7;
     width: 100%;
+    box-sizing: border-box;
     padding: 2px;
     border-radius: 10px;
     opacity: 0.9;
@@ -285,7 +288,6 @@ h1 a {
     background-color: #EFF5FB;
     padding: 23px;
     border-radius: 10px;
-
 }
 
 .one-product img {
@@ -293,7 +295,6 @@ h1 a {
     margin: 20px;
     border-radius: 10px;
     align-content: center;
-
 }
 
 .one-product h2 {
@@ -301,7 +302,6 @@ h1 a {
     padding: 20px 30px;
     font-family: Impact;
     text-align: center;
-
 }
 
 .product-price {
@@ -328,8 +328,8 @@ h1 a {
     width: 100%;
     padding: 20px;
     border-radius: 10px;
-
 }
+
         /*        Adding New records to the Page       */
 
     /* The POP-UP MENU (drop down menu for chose new position or new type repair)*/
@@ -410,7 +410,7 @@ h1 a {
     font-size: 20px;
 }
 
-/* The Close Button */
+    /* The Close Button */
 .close {
   text-decoration: none;
   color: #56044E;
@@ -480,16 +480,14 @@ h1 a {
 .edit table, td {
     margin: 20px;
     border: 0;
-
 }
+
 .edit td {
     margin: 10px;
     border: 0;
-
 }
 
             /*  CONTENT */
-
 
 table {
     margin: 20px 0;
@@ -497,7 +495,6 @@ table {
     border-collapse: collapse;
     width: 100%;
     border: none;
-
 }
 
 th, td {
@@ -506,7 +503,6 @@ th, td {
     padding: 8px;    
     font-size: 1.1em;
     border: none;
-
 }
 
 .col2 {
@@ -524,6 +520,7 @@ th, td {
     cursor: pointer;
 }
 
+
 /*============= 
 ||   BLOG    ||
 ===============*/
@@ -536,6 +533,7 @@ th, td {
     padding: 3px;
     border-radius: 10px;
     width: 100%;
+    box-sizing: border-box;
 }
 
 .post {         
@@ -571,6 +569,7 @@ th, td {
 .table-form th, td {
     border: 0px;
 }
+
 
 /*=================
     CONTACT
