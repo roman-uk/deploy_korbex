@@ -326,6 +326,7 @@ h1 a {
     opacity: 0.9;
     background: #81BEF7;
     width: 100%;
+    box-sizing: border-box;
     padding: 20px;
     border-radius: 10px;
 }
@@ -398,7 +399,7 @@ h1 a {
   margin: auto;
   padding: 20px;
   border: 4px solid #1C5858;
-  width: 80%;
+  width: 500px;
   border-radius: 5px;
 }
 
@@ -578,6 +579,7 @@ th, td {
 .content-contact {
     background: url(../images/stars_sky.jpg);
     width: 100%;
+    box-sizing: border-box;
     border-radius: 15px;
     opacity: 0.85;
 }

@@ -116,6 +116,6 @@ class WorkingHoursForm(forms.ModelForm):
         fields = ['working_day', 'working_hours']
         widgets = {
             'working_hours': forms.TextInput(attrs={
-                'placeholder': '8:00 - 18:00, albo Zamknięto'
+                'placeholder': 'n.p. 8:00 - 18:00'
             })
         }

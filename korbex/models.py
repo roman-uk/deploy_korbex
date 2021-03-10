@@ -38,7 +38,7 @@ class StoreProducts(models.Model):
     name_product = models.CharField(max_length=40, unique=True, verbose_name='Nazwa towaru')
     incomplete_description = models.TextField(max_length=180, verbose_name='Krótki opis towaru')
     continue_description = models.TextField(null=True, blank=True, verbose_name='Pełny opis towaru')
-    price = models.PositiveIntegerField(verbose_name='Cena towaru')
+    price = models.DecimalField(max_digits=7, decimal_places=2, verbose_name='Cena towaru')
 
     def __str__(self):
         return self.name_product
@@ -65,14 +65,14 @@ class StoreProducts(models.Model):
 #  >>>>>>>>>* Models from Service page *<<<<<<<<<<<
 #     Model for a type repair on the Service page
 class TypeRepair(models.Model):
-    type_repair = models.CharField(max_length=50, unique=True, help_text="Typ naprawy(kierownica, hamulca itp)")
+    type_repair = models.CharField(max_length=60, unique=True, help_text="Typ naprawy(kierownica, hamulca itp)")
 
     def __str__(self):
         return self.type_repair
 
 # Model for a repair on the Service page
 class Service(models.Model):
-    name_repair = models.CharField(max_length=50, help_text="Nazwa naprawy(wymiana kierownicy)", unique=True)
+    name_repair = models.CharField(max_length=60, help_text="Nazwa naprawy(wymiana kierownicy)", unique=True)
     type_repair = models.ForeignKey(TypeRepair, on_delete=models.PROTECT)
     price = models.CharField(max_length=20)
 
@@ -86,7 +86,7 @@ class Blog(models.Model):
     title = models.CharField(max_length=50, unique=True, verbose_name='Tytulł')
     content = models.TextField(verbose_name='Treść')
     image = models.ImageField(null=True, blank=True, verbose_name='Obrazek do artyklu', upload_to='blog_image')
-    data_add = models.DateField(auto_now=True)
+    data_add = models.DateTimeField(auto_now=True)
     author = models.CharField(max_length=20, verbose_name='Awtor artyklu')
 
     # Overriding the save method so that when an image is deleted or updated,
